@@ -1,3 +1,5 @@
+#https://machinelearningmastery.com/multivariate-time-series-forecasting-lstms-keras/
+
 from math import sqrt
 from numpy import concatenate
 from matplotlib import pyplot
