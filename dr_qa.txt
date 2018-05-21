@@ -1,0 +1,222 @@
+root@instance-8core:/home/ship_forever/lab/DrQA# ../../anaconda3/bin/python3.6 scripts/pipeline/interactive.py
+05/19/2018 02:58:40 AM: [ Running on CPU only. ]
+05/19/2018 02:58:40 AM: [ Initializing pipeline... ]
+05/19/2018 02:58:40 AM: [ Initializing document ranker... ]
+05/19/2018 02:58:40 AM: [ Loading /home/ship_forever/lab/DrQA/data/wikipedia/docs-tfidf-ngram=2-hash=16777216-tokenizer=simple.npz ]
+05/19/2018 02:59:13 AM: [ Initializing document reader... ]
+05/19/2018 02:59:13 AM: [ Loading model /home/ship_forever/lab/DrQA/data/reader/multitask.mdl ]
+05/19/2018 02:59:18 AM: [ Initializing tokenizers and document retrievers... ]
+
+Interactive DrQA
+>> process(question, candidates=None, top_n=1, n_docs=5)
+>> usage()
+
+>>> process('who is mao')
+05/19/2018 02:59:28 AM: [ Processing 1 queries... ]
+05/19/2018 02:59:28 AM: [ Retrieving top 5 docs... ]
+05/19/2018 02:59:31 AM: [ Reading 656 paragraphs... ]
+05/19/2018 02:59:43 AM: [ Processed 1 queries in 15.1603 (s) ]
+Top Predictions:
++------+----------+----------+--------------+-----------+
+| Rank |  Answer  |   Doc    | Answer Score | Doc Score |
++------+----------+----------+--------------+-----------+
+|  1   | Lin Biao | Lin Biao |    250.22    |   173.53  |
++------+----------+----------+--------------+-----------+
+
+Contexts:
+[ Doc = Lin Biao ]
+Lin Biao
+
+>>> process('who is mao?')
+05/19/2018 02:59:52 AM: [ Processing 1 queries... ]
+05/19/2018 02:59:52 AM: [ Retrieving top 5 docs... ]
+05/19/2018 02:59:53 AM: [ Reading 656 paragraphs... ]
+05/19/2018 03:00:06 AM: [ Processed 1 queries in 13.8071 (s) ]
+Top Predictions:
++------+------------+------------+--------------+-----------+
+| Rank |   Answer   |    Doc     | Answer Score | Doc Score |
++------+------------+------------+--------------+-----------+
+|  1   | Mao Zedong | Mao Zedong |    15.959    |   205.54  |
++------+------------+------------+--------------+-----------+
+
+Contexts:
+[ Doc = Mao Zedong ]
+Mao Zedong
+
+>>> process('who is Xi?')
+05/19/2018 03:00:21 AM: [ Processing 1 queries... ]
+05/19/2018 03:00:21 AM: [ Retrieving top 5 docs... ]
+05/19/2018 03:00:21 AM: [ Reading 275 paragraphs... ]
+05/19/2018 03:00:26 AM: [ Processed 1 queries in 4.8928 (s) ]
+Top Predictions:
++------+-----------+------------+--------------+-----------+
+| Rank |   Answer  |    Doc     | Answer Score | Doc Score |
++------+-----------+------------+--------------+-----------+
+|  1   | Hu Jintao | Xi Jinping |    65.875    |   109.69  |
++------+-----------+------------+--------------+-----------+
+
+Contexts:
+[ Doc = Xi Jinping ]
+Political observers have called Xi "the most powerful Chinese leader since Deng Xiaoping." Xi has notably departed from the "collective rule" practices of his predecessor Hu Jintao. During his years as the party's general secretary, Hu w                                                                                as seen as the "first among equals" with his Standing Committee colleagues, an arbiter of collective opinion. In the top leadership, Hu's power was shared, mostly notably with Premier Wen Jiabao and former Political and Legal Affairs Com                                                                                mission Secretary Zhou Yongkang, who presided over the government bureaucracy (and thus, the economy) and the state security system, respectively. Xi, on the other hand, has unmistakably become the central figure of the new administratio                                                                                n.
+
+>>> process('who is Trump?')
+05/19/2018 03:00:47 AM: [ Processing 1 queries... ]
+05/19/2018 03:00:47 AM: [ Retrieving top 5 docs... ]
+05/19/2018 03:00:48 AM: [ Reading 889 paragraphs... ]
+05/19/2018 03:01:07 AM: [ Processed 1 queries in 19.9279 (s) ]
+Top Predictions:
++------+-----------------+-------------------------------+--------------+-----------+
+| Rank |      Answer     |              Doc              | Answer Score | Doc Score |
++------+-----------------+-------------------------------+--------------+-----------+
+|  1   | Donald J. Trump | Legal affairs of Donald Trump |    3019.8    |   195.94  |
++------+-----------------+-------------------------------+--------------+-----------+
+
+Contexts:
+[ Doc = Legal affairs of Donald Trump ]
+During the 2016 U.S. presidential election, media began reporting in detail on how the Donald J. Trump Foundation was funded and how Donald Trump used its funds. The "Washington Post" in particular reported several cases of possible mis-use, self-dealing and possible tax evasion.
+
+>>> process('what is hsbc')
+05/19/2018 03:01:40 AM: [ Processing 1 queries... ]
+05/19/2018 03:01:40 AM: [ Retrieving top 5 docs... ]
+05/19/2018 03:01:40 AM: [ Reading 213 paragraphs... ]
+05/19/2018 03:01:43 AM: [ Processed 1 queries in 2.8164 (s) ]
+Top Predictions:
++------+-------------------+------+--------------+-----------+
+| Rank |       Answer      | Doc  | Answer Score | Doc Score |
++------+-------------------+------+--------------+-----------+
+|  1   | HSBC Private Bank | HSBC |    1093.9    |   227.52  |
++------+-------------------+------+--------------+-----------+
+
+Contexts:
+[ Doc = HSBC ]
+HSBC Private Bank is the marketing name for the private banking business conducted by the principal private banking subsidiaries of the HSBC Group worldwide. HSBC Private Bank, together with the private banking activities of HSBC Trinkaus, known collectively as Group Private Banking, provides services to high-net-worth individuals and their families through 93 locations in some 42 countries and territories in Europe, the Asia-Pacific region, the Americas, the Middle East and Africa. According to the Scorpio Partnership Global Private Banking Benchmark 2014, the bank had 382 USD Bn of assets under management (AuM) a decrease of 4% on the 2013 figure.
+
+>>> process('what is the best programming language in the world?')
+05/19/2018 03:02:48 AM: [ Processing 1 queries... ]
+05/19/2018 03:02:48 AM: [ Retrieving top 5 docs... ]
+05/19/2018 03:02:48 AM: [ Reading 401 paragraphs... ]
+05/19/2018 03:02:57 AM: [ Processed 1 queries in 9.1842 (s) ]
+Top Predictions:
++------+---------+----------------------+--------------+-----------+
+| Rank |  Answer |         Doc          | Answer Score | Doc Score |
++------+---------+----------------------+--------------+-----------+
+|  1   | English | Programming language |    1923.4    |   229.46  |
++------+---------+----------------------+--------------+-----------+
+
+Contexts:
+[ Doc = Programming language ]
+Another early programming language was devised by Grace Hopper in the US, called FLOW-MATIC. It was developed for the UNIVAC I at Remington Rand during the period from 1955 until 1959. Hopper found that business data processing customers were uncomfortable with mathematical notation, and in early 1955, she and her team wrote a specification for an English programming language and implemented a prototype. The FLOW-MATIC compiler became publicly available in early 1958 and was substantially complete in 1959. Flow-Matic was a major influence in the design of COBOL, since only it and its direct descendant AIMACO were in actual use at the time.
+
+>>> process('how to cook pizza?')
+05/19/2018 03:04:22 AM: [ Processing 1 queries... ]
+05/19/2018 03:04:22 AM: [ Retrieving top 5 docs... ]
+05/19/2018 03:04:22 AM: [ Reading 127 paragraphs... ]
+05/19/2018 03:04:24 AM: [ Processed 1 queries in 2.4627 (s) ]
+Top Predictions:
++------+----------------------------------------+-------+--------------+-----------+
+| Rank |                 Answer                 |  Doc  | Answer Score | Doc Score |
++------+----------------------------------------+-------+--------------+-----------+
+|  1   | Chicago-style pizza, is baked in a pan | Pizza |    27.92     |   159.26  |
++------+----------------------------------------+-------+--------------+-----------+
+
+Contexts:
+[ Doc = Pizza ]
+In restaurants, pizza can be baked in an oven with stone bricks above the heat source, an electric deck oven, a conveyor belt oven or, in the case of more expensive restaurants, a wood- or coal-fired brick oven. On deck ovens, pizza can be slid into the oven on a long paddle, called a peel, and baked directly on the hot bricks or baked on a screen (a round metal grate, typically aluminum). Prior to use, a peel may be sprinkled with cornmeal to allow pizza to easily slide onto and off of it. When made at home, it can be baked on a pizza stone in a regular oven to reproduce the effect of a brick oven. Another option is grilled pizza, in which the crust is baked directly on a barbecue grill. Greek pizza, like Chicago-style pizza, is baked in a pan rather than directly on the bricks of the pizza oven.
+
+>>> process('what is pizza?')
+05/19/2018 03:04:49 AM: [ Processing 1 queries... ]
+05/19/2018 03:04:49 AM: [ Retrieving top 5 docs... ]
+05/19/2018 03:04:49 AM: [ Reading 146 paragraphs... ]
+05/19/2018 03:04:52 AM: [ Processed 1 queries in 2.2416 (s) ]
+Top Predictions:
++------+----------------------+-----------+--------------+-----------+
+| Rank |        Answer        |    Doc    | Answer Score | Doc Score |
++------+----------------------+-----------+--------------+-----------+
+|  1   | Pizza Hut restaurant | Pizza Hut |    44.188    |   144.93  |
++------+----------------------+-----------+--------------+-----------+
+
+Contexts:
+[ Doc = Pizza Hut ]
+Another UK ad shows British Formula One driver Damon Hill visiting a Pizza Hut restaurant and ordering a pizza, with F1 commentator Murray Walker visiting with him, and narrating as though it was a Formula One race. As Hill is about to finish his meal, Walker, in a play on Hill's 1994 and 1995 seasons where he was runner up in the Formula One World Championship both won by Michael Schumacher, shouts "And Hill finishes second, again!" Hill grabs Walker by his shirt and shakes him angrily, with Walker proclaiming, "He's lost it! He's out of control!"
+
+>>> process('why people hate justin bieber?')
+05/19/2018 03:06:10 AM: [ Processing 1 queries... ]
+05/19/2018 03:06:10 AM: [ Retrieving top 5 docs... ]
+05/19/2018 03:06:10 AM: [ Reading 436 paragraphs... ]
+05/19/2018 03:06:14 AM: [ Processed 1 queries in 4.0328 (s) ]
+Top Predictions:
++------+------------+------------------------------+--------------+-----------+
+| Rank |   Answer   |             Doc              | Answer Score | Doc Score |
++------+------------+------------------------------+--------------+-----------+
+|  1   | Cold Water | 2016 in British music charts |    200.86    |   347.62  |
++------+------------+------------------------------+--------------+-----------+
+
+Contexts:
+[ Doc = 2016 in British music charts ]
+Major Lazer featuring Justin Bieber & MØ — "Cold Water" remained at number 1 for a fourth week, beating DJ Snake featuring Justin Bieber — "Let Me Love You" with streaming which remained at number 2 for a second week.
+
+>>> process('where can i see opera house?')
+05/19/2018 03:12:48 AM: [ Processing 1 queries... ]
+05/19/2018 03:12:48 AM: [ Retrieving top 5 docs... ]
+05/19/2018 03:12:49 AM: [ Reading 259 paragraphs... ]
+05/19/2018 03:12:53 AM: [ Processed 1 queries in 4.3995 (s) ]
+Top Predictions:
++------+-------------------+-----------------+--------------+-----------+
+| Rank |       Answer      |       Doc       | Answer Score | Doc Score |
++------+-------------------+-----------------+--------------+-----------+
+|  1   | Royal Opera House | The Royal Opera |  2.5681e+05  |   174.36  |
++------+-------------------+-----------------+--------------+-----------+
+
+Contexts:
+[ Doc = The Royal Opera ]
+The Royal Opera is a company based in central London, resident at the Royal Opera House, Covent Garden. Along with the English National Opera, it is one of the two principal opera companies in London. Founded in 1946 as the Covent Garden Opera Company, it was known by that title until 1968. It brought a long annual season and consistent management to a house that had previously hosted short seasons under a series of impresarios. Since its inception, it has shared the Royal Opera House with the dance company now known as The Royal Ballet.
+
+>>> process('where can i see great wall?')
+05/19/2018 03:13:15 AM: [ Processing 1 queries... ]
+05/19/2018 03:13:15 AM: [ Retrieving top 5 docs... ]
+05/19/2018 03:13:15 AM: [ Reading 208 paragraphs... ]
+05/19/2018 03:13:19 AM: [ Processed 1 queries in 4.4030 (s) ]
+Top Predictions:
++------+--------+------------------------------------+--------------+-----------+
+| Rank | Answer |                Doc                 | Answer Score | Doc Score |
++------+--------+------------------------------------+--------------+-----------+
+|  1   | China  | History of the Great Wall of China |    22020     |   304.39  |
++------+--------+------------------------------------+--------------+-----------+
+
+Contexts:
+[ Doc = History of the Great Wall of China ]
+The Great Wall of China visible today largely dates from the Ming dynasty, as they rebuilt much of the wall in stone and brick, often extending its line through challenging terrain. Some sections remain in relatively good condition or have been renovated, while others have been damaged or destroyed for ideological reasons, deconstructed for their building materials, or lost due to the ravages of time. For long an object of fascination for foreigners, the wall is now a revered national symbol and a popular tourist destination.
+
+>>> process('how long is great wall?')
+05/19/2018 03:14:24 AM: [ Processing 1 queries... ]
+05/19/2018 03:14:24 AM: [ Retrieving top 5 docs... ]
+05/19/2018 03:14:24 AM: [ Reading 208 paragraphs... ]
+05/19/2018 03:14:28 AM: [ Processed 1 queries in 4.7200 (s) ]
+Top Predictions:
++------+--------------+---------------------+--------------+-----------+
+| Rank |    Answer    |         Doc         | Answer Score | Doc Score |
++------+--------------+---------------------+--------------+-----------+
+|  1   | 10,000 miles | Great Wall of China |  4.7498e+05  |   273.03  |
++------+--------------+---------------------+--------------+-----------+
+
+Contexts:
+[ Doc = Great Wall of China ]
+The longer Chinese name "Ten-Thousand-Mile Long Wall" (萬里長城, "Wanli Changcheng") came from Sima Qian's description of it in the "Records", though he did not name the walls as such. The  493 "Book of Song" quotes the frontier general Tan Daoji referring to "the long wall of 10,000 miles", closer to the modern name, but the name rarely features in pre-modern times otherwise. The traditional Chinese mile (, "lǐ") was an often irregular distance that was intended to show the length of a standard village and varied with terrain but was usually standardized at distances around a third of an English mile (540 m). Since China's metrication in 1930, it has been exactly equivalent to , which would make the wall's name describe a distance of . However, this use of "ten-thousand" ("wàn") is figurative in a similar manner to the Greek and English "myriad" and simply means "innumerable" or "immeasurable".
+
+>>> process('how tall is tom cruise?')
+05/19/2018 03:15:40 AM: [ Processing 1 queries... ]
+05/19/2018 03:15:40 AM: [ Retrieving top 5 docs... ]
+05/19/2018 03:15:40 AM: [ Reading 153 paragraphs... ]
+05/19/2018 03:15:44 AM: [ Processed 1 queries in 4.3045 (s) ]
+Top Predictions:
++------+----------------+----------------+--------------+-----------+
+| Rank |     Answer     |      Doc       | Answer Score | Doc Score |
++------+----------------+----------------+--------------+-----------+
+|  1   | Knight and Day | Knight and Day |    13.091    |   241.83  |
++------+----------------+----------------+--------------+-----------+
+
+Contexts:
+[ Doc = Knight and Day ]
+Knight and Day is a 2010 American comedy film starring Tom Cruise and Cameron Diaz. The film, directed by James Mangold, is Cruise and Diaz's second on-screen collaboration following the 2001 film "Vanilla Sky". Diaz plays June Havens, a classic car restorer who unwittingly gets caught up with the eccentric secret agent Roy Miller, played by Cruise, who is on the run from the CIA.
+
+>>>
