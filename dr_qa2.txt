@@ -1,0 +1,155 @@
+root@instance-8core:/home/ship_forever/lab/DrQA# ../../anaconda3/bin/python3.6 scripts/pipeline/interactive.py
+05/21/2018 07:17:26 AM: [ Running on CPU only. ]
+05/21/2018 07:17:26 AM: [ Initializing pipeline... ]
+05/21/2018 07:17:26 AM: [ Initializing document ranker... ]
+05/21/2018 07:17:26 AM: [ Loading /home/ship_forever/lab/DrQA/data/wikipedia/docs-tfidf-ngram=2-hash=16777216-tokeniz                                                                                                                        er=simple.npz ]
+05/21/2018 07:17:59 AM: [ Initializing document reader... ]
+05/21/2018 07:17:59 AM: [ Loading model /home/ship_forever/lab/DrQA/data/reader/multitask.mdl ]
+05/21/2018 07:18:04 AM: [ Initializing tokenizers and document retrievers... ]
+
+Interactive DrQA
+>> process(question, candidates=None, top_n=1, n_docs=5)
+>> usage()
+
+>>> process('what is bank regulation difference between U.S. and UK?')
+05/21/2018 07:18:54 AM: [ Processing 1 queries... ]
+05/21/2018 07:18:54 AM: [ Retrieving top 5 docs... ]
+05/21/2018 07:18:56 AM: [ Reading 268 paragraphs... ]
+05/21/2018 07:19:00 AM: [ Processed 1 queries in 5.4346 (s) ]
+Top Predictions:
++------+---------------------+-----------------+--------------+-----------+
+| Rank |        Answer       |       Doc       | Answer Score | Doc Score |
++------+---------------------+-----------------+--------------+-----------+
+|  1   | Banking regulations | Bank regulation |    165.07    |   196.37  |
++------+---------------------+-----------------+--------------+-----------+
+
+Contexts:
+[ Doc = Bank regulation ]
+Banking regulations vary widely between jurisdictions.
+
+>>> process('what is bank regulation difference between U.S. and UK?', top_n=3, n_docs=15)
+05/21/2018 07:19:52 AM: [ Processing 1 queries... ]
+05/21/2018 07:19:52 AM: [ Retrieving top 15 docs... ]
+05/21/2018 07:19:53 AM: [ Reading 1168 paragraphs... ]
+05/21/2018 07:20:07 AM: [ Processed 1 queries in 14.9300 (s) ]
+Top Predictions:
++------+----------------------------------------------------------+------------------------------+--------------+----                                                                                                                        -------+
+| Rank |                          Answer                          |             Doc              | Answer Score | Doc                                                                                                                         Score |
++------+----------------------------------------------------------+------------------------------+--------------+----                                                                                                                        -------+
+|  1   |                       Banking law                        |             Bank             |    1008.7    |   1                                                                                                                        59.68  |
+|  2   |                   Banking regulations                    |       Bank regulation        |    165.07    |   1                                                                                                                        96.37  |
+|  3   | banking is regulated at both the federal and state level | Banking in the United States |    124.01    |   1                                                                                                                        71.24  |
++------+----------------------------------------------------------+------------------------------+--------------+----                                                                                                                        -------+
+
+Contexts:
+[ Doc = Bank ]
+Banking law is based on a contractual analysis of the relationship between the "bank" (defined above) and the "custom                                                                                                                        er"—defined as any entity for which the bank agrees to conduct an account.
+
+[ Doc = Bank regulation ]
+Banking regulations vary widely between jurisdictions.
+
+[ Doc = Banking in the United States ]
+Bank regulation in the United States is highly fragmented compared with other G10 countries. While most of these coun                                                                                                                        tries have only one bank regulator, in the U.S., banking is regulated at both the federal and state level. Depending                                                                                                                         on its type of charter and organizational structure, a banking organization may be subject to numerous federal and st                                                                                                                        ate banking regulations. Unlike Japan and the United Kingdom (where regulatory authority over the banking, securities                                                                                                                         and insurance industries is combined into one single financial-service agency), the U.S. maintains separate securiti                                                                                                                        es, commodities, and insurance regulatory agencies—separate from the bank regulatory agencies—at the federal and stat                                                                                                                        e level.
+
+>>> process('how to learn Python programming?', top_n=3, n_docs=15)
+05/21/2018 07:21:55 AM: [ Processing 1 queries... ]
+05/21/2018 07:21:55 AM: [ Retrieving top 15 docs... ]
+05/21/2018 07:21:55 AM: [ Reading 733 paragraphs... ]
+05/21/2018 07:22:01 AM: [ Processed 1 queries in 6.4207 (s) ]
+Top Predictions:
++------+-----------------------------------------------------------------+-------------------------------+--------------+-----------+
+| Rank |                              Answer                             |              Doc              | Answer Score | Doc Score |
++------+-----------------------------------------------------------------+-------------------------------+--------------+-----------+
+|  1   |                     Boxee, (using the easier                    |             Boxee             |    178.83    |   217.87  |
+|  2   |           GNU Debugger uses Python as a pretty printer          | Python (programming language) |    89.568    |   216.09  |
+|  3   | intermediate bytecode, which is executed by the virtual machine | Python (programming language) |    29.576    |   216.09  |
++------+-----------------------------------------------------------------+-------------------------------+--------------+-----------+
+
+Contexts:
+[ Doc = Boxee ]
+Boxee features a Python Scripts Engine and WindowXML application framework (a XML-based widget toolkit for creating a GUI for widgets) in a similar fashion to Apple Mac OS X Dashboard Widgets and Microsoft Gadgets in Windows Sidebar. Python widget scripts allow non-developers to themselves create new add-ons functionality to Boxee, (using the easier to learn Python programming language), without knowledge of the complex C/C++ programming language that the rest of the Boxee software is written in. Current plugin scripts add-ons include functions like Internet-TV and movie-trailer browsers, cinema guides, Internet-radio-station browsers (example SHOUTcast), and much more.
+
+[ Doc = Python (programming language) ]
+Python has been successfully embedded in many software products as a scripting language, including in finite element method software such as Abaqus, 3D parametric modeler like FreeCAD, 3D animation packages such as 3ds Max, Blender, Cinema 4D, Lightwave, Houdini, Maya, modo, MotionBuilder, Softimage, the visual effects compositor Nuke, 2D imaging programs like GIMP, Inkscape, Scribus and Paint Shop Pro, and musical notation program or scorewriter capella. GNU Debugger uses Python as a pretty printer to show complex structures such as C++ containers. Esri promotes Python as the best choice for writing scripts in ArcGIS. It has also been used in several video games, and has been adopted as first of the three available programming languages in Google App Engine, the other two being Java and Go. Python is also used in algorithmic trading and quantitative finance. Python can also be implemented in APIs of online brokerages that run on other languages by using wrappers.
+
+[ Doc = Python (programming language) ]
+The main Python implementation, named CPython, is written in C meeting the C89 standard. It compiles Python programs into intermediate bytecode, which is executed by the virtual machine. CPython is distributed with a large standard library written in a mixture of C and Python. It is available in versions for many platforms, including Windows and most modern Unix-like systems. CPython was intended from almost its very conception to be cross-platform.
+
+>>> process('how long is HSBC's history', top_n=3, n_docs=15)
+  File "<console>", line 1
+    process('how long is HSBC's history', top_n=3, n_docs=15)
+                              ^
+SyntaxError: invalid syntax
+>>> process('how long is HSBC history', top_n=3, n_docs=15)
+05/21/2018 07:22:42 AM: [ Processing 1 queries... ]
+05/21/2018 07:22:42 AM: [ Retrieving top 15 docs... ]
+05/21/2018 07:22:42 AM: [ Reading 361 paragraphs... ]
+05/21/2018 07:22:46 AM: [ Processed 1 queries in 3.9991 (s) ]
+Top Predictions:
++------+---------------------+-----------------------------------------------+--------------+-----------+
+| Rank |        Answer       |                      Doc                      | Answer Score | Doc Score |
++------+---------------------+-----------------------------------------------+--------------+-----------+
+|  1   | more than 130 years | The Hongkong and Shanghai Banking Corporation |  3.4743e+07  |   192.79  |
+|  2   |      four years     |                8 Canada Square                |  2.2809e+05  |   205.38  |
+|  3   |     twelve years    |               Michael Geoghegan               |  1.5656e+05  |   142.93  |
++------+---------------------+-----------------------------------------------+--------------+-----------+
+
+Contexts:
+[ Doc = The Hongkong and Shanghai Banking Corporation ]
+HSBC's history in the Philippines dates back more than 130 years with the establishment of their first branch no. 90 Rosario Street (Now Quintin Paredes Street) in Binondo, Manila in 1876. In its early years of operation, HSBC serviced the booming Philippine sugar industry. At the turn of the century, it financed railways that connected provincial towns across Luzon to Manila. During the American regime, HSBC was called to advise on Philippine currency reform. Its current headquarters are in Fort Bonifacio. Today, HSBC Philippines operates in key Philippine cities such as Cebu and Davao. It has ended Citibank and Standard Chartered's duopoly on international banking in the Philippines.
+
+[ Doc = 8 Canada Square ]
+Counting from its official opening in April 2003, it was only four years before difficulties emerged in managing the building and its associated costs. In April 2007, HSBC Tower was sold to Spanish property company Metrovacesa, becoming the first building in Britain to be sold for more than £1bn.
+
+[ Doc = Michael Geoghegan ]
+He joined HSBC in 1973 as an international manager and, since then, spent twelve years in North and South America, eight years in Asia, seven years in the Middle East and three years in Europe. Geoghegan arrived in Brazil in March 1997 to establish the Group's operations in the country following the creation of Banco HSBC Bamerindus S.A. He was appointed a group general manager of HSBC Holdings plc in the same year.
+
+>>> process('what is investment portfolio?', top_n=3, n_docs=15)
+05/21/2018 07:23:28 AM: [ Processing 1 queries... ]
+05/21/2018 07:23:28 AM: [ Retrieving top 15 docs... ]
+05/21/2018 07:23:28 AM: [ Reading 600 paragraphs... ]
+05/21/2018 07:23:35 AM: [ Processed 1 queries in 6.8194 (s) ]
+Top Predictions:
++------+-----------------------------+------------------------------+--------------+-----------+
+| Rank |            Answer           |             Doc              | Answer Score | Doc Score |
++------+-----------------------------+------------------------------+--------------+-----------+
+|  1   |    Sovereign Wealth Fund    | State Oil Fund of Azerbaijan |    1841.1    |   207.85  |
+|  2   | O'Leary Funds Management LP |        Kevin O'Leary         |    898.85    |   165.95  |
+|  3   |        O'Leary Funds        |        Kevin O'Leary         |    867.43    |   165.95  |
++------+-----------------------------+------------------------------+--------------+-----------+
+
+Contexts:
+[ Doc = State Oil Fund of Azerbaijan ]
+A Sovereign Wealth Fund(SWF) is a state-owned investment fund composed of financial assets such as stocks, bonds, property, precious metals or other financial instruments that is formed from revenues from natural resources. The term sovereign wealth fund was first used in 2005. The International Working Group of Sovereign Wealth Funds (IWG) announced its establishment in April 2009 in the city-capital of Kuwait.
+
+[ Doc = Kevin O'Leary ]
+On 14 July 2015, O'Leary launched his own ETF through O'Shares Investments, a division of his investment fund, O'Leary Funds Management LP, where O'Leary serves as the Chairman. O’Leary began to grow O’Shares Investments by offering non-cash compensation to registered investment advisors who purchase his products. The non-cash compensation was in the form of a "Kevin O’Leary speaking engagement", which was given a monetary value of $40,000. O’Leary has faced penalties in the past from securities regulators.
+
+[ Doc = Kevin O'Leary ]
+Following his business ventures in software, storage facilities and private equity, O'Leary moved into investing, winemaking and mortgages. His ventures included O'Leary Funds (a mutual and investment fund management firm that handles more than $1.5 billion), O'Leary Ventures (a private early-stage venture capital investment company that invests in and partners with early-stage, high-growth-potential companies in various Canadian industries), O'Leary Mortgages (a mortgage firm), O'Leary books, and O'Leary Fine Wines (a winemaking company). In April 2014, O'Leary Mortgages went out of business.
+
+>>> process('what is data protection rules?', top_n=3, n_docs=15)
+05/21/2018 07:24:33 AM: [ Processing 1 queries... ]
+05/21/2018 07:24:33 AM: [ Retrieving top 15 docs... ]
+05/21/2018 07:24:34 AM: [ Reading 927 paragraphs... ]
+05/21/2018 07:24:57 AM: [ Processed 1 queries in 23.5725 (s) ]
+Top Predictions:
++------+---------------------------------------+-----------------------+--------------+-----------+
+| Rank |                 Answer                |          Doc          | Answer Score | Doc Score |
++------+---------------------------------------+-----------------------+--------------+-----------+
+|  1   |        Data Protection Act 1998       | EGovernment in Europe |    3672.4    |   213.34  |
+|  2   |      Federal Data Protection Act      | EGovernment in Europe |    2375.9    |   213.34  |
+|  3   | Data Protection / Privacy Legislation | EGovernment in Europe |    2058.4    |   213.34  |
++------+---------------------------------------+-----------------------+--------------+-----------+
+
+Contexts:
+[ Doc = EGovernment in Europe ]
+eGovernment in the UK is regulated by a framework of laws covering a broad spectrum of relevant fields such as: "Freedom of Information" legislation (Freedom of Information Act 2000); data protection legislation (Data Protection Act 1998); legislation related to eCommerce (Electronic Communications Act 2000; Electronic Commerce (EC Directive) Regulations 2002); legislation concerning electronic signatures (Electronic Signatures Regulations 2002); and the re-use of public sector information regulations 2005.
+
+[ Doc = EGovernment in Europe ]
+The legal basis for eGovernment in Germany is set by a framework of laws regulating key aspects of eGovernment (and of the Information society in general) such as: Freedom of Information Legislation (Freedom of information Act); Data Protection (Federal Data Protection Act); eSignatures related legislation (Digital Signature Act); and legislation regarding the re-use of public sector information (Law on re-use of Public Sector Information).
+
+[ Doc = EGovernment in Europe ]
+eGovernment in the Netherlands is regulated by a set of laws covering a broad range of fields, namely, Freedom of Information Legislation (Government Information (Public Access) Act (1991), Data Protection / Privacy Legislation (Personal Data Protection Act (2000), eCommerce Legislation (eCommerce Act (2004)), eCommunications Legislation (Telecommunications Act (2004)), eSignatures Legislation (Electronic Signature Act (2003)).
+
+>>>
